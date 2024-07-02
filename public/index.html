@@ -1,28 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>AI Text Summarizer App</title>
-    <link rel="stylesheet" href="stylesheet.css">   
+    <link rel="stylesheet" href="stylesheet.css" />
   </head>
   <body>
+    <div id="popup" >
+      <h2>Text removed</h2>
+    </div>
     <h1><span>Clarity</span>Crunch</h1>
-    <p> Welcome to the AI Text Summarizer App! This app leverages the power of Artificial Intelligence APIs to provide concise summaries of long texts. Whether you have a lengthy article, research paper, or any other text document that you want to summarize quickly, our app can assist you. </p>
-    <p> Simply paste your text into the text area below and click the "Submit" button. </p>
+
+    <h2>Text Summarizer</h2>
     <div class="container">
       <div class="text-box">
-        <textarea id="text_to_summarize" name="text_to_summarize" placeholder="Paste in some text to summarize. (Min length is 200 chars. Max length is 100,000 chars.)" maxlength="100000"></textarea>
-        <button id="submit-button" class="submit-button" >
+        <h3>
+          Summarize
+          <div class="tooltip">
+            <p>!</p>
+            <span class="tooltiptext"
+              >to express the most important facts or ideas about something or
+              someone in a short and clear form</span
+            >
+          </div>
+        </h3>
+        <textarea
+          id="text_to_summarize"
+          name="text_to_summarize"
+          placeholder="Paste in some text to summarize. (Min length is 200 chars. Max length is 100,000 chars.)"
+          maxlength="100000"
+        ></textarea>
+       <div id="buttom-section">
+        <button id="clear-button-input" class="clear-button">
+          <span class="clear-button-text">Clear</span>
+        </button>
+        <button id="submit-button" class="submit-button">
           <span class="submit-button-text">Summarize</span>
         </button>
+       </div>
       </div>
-      <div class="text-box"> 
-      <textarea id="summary" name="summarized_text" placeholder="Summarized text will appear here"> </textarea>
+
+
+      <div class="text-box">
+        <div class="resultSummary">
+          <label for="summarylength"> Summarize Length </label>
+          <div class="rangeSec">
+            <input
+              type="range"
+              name="summarylength"
+              id="summarylength"
+              min="5"
+              max="20"
+              value="10"
+            />
+            <p class="Sumvalue">10</p>
+          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+          >
+            <path
+              d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"
+            />
+          </svg>
+        </div>
+        <textarea
+          id="summary"
+          name="summarized_text"
+          placeholder="Summarized text will appear here"
+          disabled
+        ></textarea>
+        <div id="buttom-section">
+          <button id="clear-button-result" class="clear-button">
+            <span class="clear-button-text">Clear</span>
+          </button>
+          <button id="copy-button" class="copy-button" title="copy-summary">
+            <svg xmlns="http://www.w3.org/2000/svg" height="15px" viewBox="0 -960 960 960" width="15px" ><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
+          </button>
+         </div>
+        </div>
       </div>
     </div>
-    
+
     <script src="script.js"></script>
   </body>
 </html>
