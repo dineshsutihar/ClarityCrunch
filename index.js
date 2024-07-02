@@ -13,8 +13,9 @@ app.use(express.static("public"));
 // summarize endpoint
 app.post("/summarize", (req, res) => {
   const text = req.body.text_to_summarize;
+  const range = req.body.range;
 
-  summarizeText(text)
+  summarizeText(text, range)
     .then((response) => {
       res.send(response);
     })

@@ -3,12 +3,27 @@ require("dotenv").config();
 
 // This is the function where the call to the API is made. Returns the summarized text as a string.
 
-async function summarizeText(text) {
+async function summarizeText(text, range) {
+  let max, min;
+
+  if (range == 1) {
+    max = 100;
+    min = 50;
+  } else if (range == 2) {
+    max = 200;
+    min = 100;
+  } else if (range == 3) {
+    max = 400;
+    min = 200;
+  } else {
+    max = 70;
+    min = 50;
+  }
   let data = JSON.stringify({
     inputs: text,
     parameters: {
-      max_length: 100,
-      min_length: 30,
+      max_length: max,
+      min_length: min,
     },
   });
 
