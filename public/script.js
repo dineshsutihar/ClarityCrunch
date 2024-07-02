@@ -40,6 +40,7 @@ clearInput.onclick = () => {
   if (textArea.value) {
     textArea.value = "";
     popUp("Cleared Successfully");
+    submitButton.disabled = true;
   }
 };
 
