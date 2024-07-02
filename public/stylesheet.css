@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+ES+Deco:wght@100..400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +8,15 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #ededed;
+  background: url(https://img.freepik.com/free-vector/paper-style-white-monochrome-background_52683-66443.jpg?t=st=1719922146~exp=1719925746~hmac=b843cac4c09bf3e61c2ed92fd50a876864707a39bbda1d9a833dff92a78d31cb&w=996);
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 20px;
   text-align: center;
+  filter: drop-shadow(0 10px 0.4rem rgba(138, 138, 138, 0.439));
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+  height: 95dvh;
 }
 
 h1 {
@@ -20,17 +27,46 @@ h1 {
   font-size: 32px;
   span {
     color: #ef5b25;
+    font-family: "Playwrite ES Deco", cursive;
   }
 }
 h2 {
   color: #000;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
-
+#tagline {
+  font-size: smaller;
+  margin-top: -35px;
+  font-family: "Sansita", sans-serif;
+}
 p {
   line-height: 1.5;
   margin-bottom: 20px;
   font-size: 18px;
+}
+
+details {
+  list-style: none;
+  text-align: left;
+  max-width: 410px;
+  margin: 0 auto;
+  summary {
+    text-align: center;
+    margin: 0 auto;
+    list-style: none;
+    border: 2px solid #888888;
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #888888;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+  }
+  span {
+    font-weight: 600;
+    line-height: 1.7rem;
+  }
 }
 
 .container {
