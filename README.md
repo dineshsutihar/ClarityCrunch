@@ -1,8 +1,9 @@
-# <span style="color:yellow">Clarity</span>Crunch
+# <span style="color:">Clarity</span>Crunch
 
+![Website](./public/images/DocsImage.png)
 Welcome to **ClarityCrunch**, the web-based AI text summarizer that leverages the power of Facebook's BART-large-CNN model, provided through Hugging Face's serverless infrastructure, and built with Express.js for the backend.
 
-## Features 
+## Features
 
 - **Text Summarization**: Utilizes the cutting-edge BART-large-CNN model to provide concise summaries of your text.
 - **Serverless Architecture**: Powered by Hugging Face's serverless platform for scalable and efficient AI model deployment.
