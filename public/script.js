@@ -10,12 +10,13 @@ const popup = document.querySelector("#popup");
 const popupText = document.querySelector("#popup h2");
 const copyResult = document.getElementById("copy-button");
 const lengthToGenerate = document.getElementById("summarylength");
+const deletebtn = document.querySelector(".resultSummary svg");
 
 summarizeLength.oninput = (e) => {
   let range = e.target.value;
-  if (range < 10) {
+  if (range == 1) {
     summValue.innerHTML = "S";
-  } else if (range < 15 && range >= 10) {
+  } else if (range == 2) {
     summValue.innerHTML = "M";
   } else {
     summValue.innerHTML = "L";
@@ -32,9 +33,22 @@ function hidePopup() {
 
 function popUp(message) {
   popupText.textContent = message;
-  setTimeout("showPopup()", 100);
+  setTimeout("showPopup()", 0);
   setTimeout("hidePopup()", 2000);
 }
+
+deletebtn.onclick = () => {
+  if (textArea.value || summarizedText.value || summarizeLength.value != 2) {
+    textArea.value = "";
+    summarizedText.value = "";
+    summarizeLength.value = "2";
+    summValue.textContent = "M";
+    popUp("Reset To Initial State Sucessfull");
+    submitButton.disabled = true;
+  } else {
+    popUp("Nothing To Rest");
+  }
+};
 
 clearInput.onclick = () => {
   if (textArea.value) {
