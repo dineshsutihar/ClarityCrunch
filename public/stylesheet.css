@@ -147,14 +147,15 @@ textarea {
   }
 }
 
-
-#buttom-section{
+#buttom-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.submit-button,.clear-button,.copy-button {
+.submit-button,
+.clear-button,
+.copy-button {
   position: relative;
   background-color: #000000;
   color: #ffffff;
@@ -166,11 +167,28 @@ textarea {
   margin-bottom: -5px;
 }
 
-.clear-button, .copy-button{
+.clear-button,
+.copy-button {
   background-color: #ededed;
   color: #000;
   border: 1px solid #888888;
-  fill:#000000 ;
+  fill: #000000;
+}
+
+.copy-button:hover,
+.clear-button:hover {
+  background-color: #888888;
+  color: white;
+  fill: #fff;
+}
+
+.copy-button:active,
+.clear-button:active {
+  background-color: #f77545;
+}
+
+.Sumvalue {
+  user-select: none;
 }
 
 .submit-button-text {
@@ -213,11 +231,10 @@ textarea {
   animation: button-loading-spinner 1s ease infinite;
 }
 
-#popup{
+#popup {
   position: absolute;
-  background-color: #888888;
-  width: 400px;
-  height: 100px;
+  width: 350px;
+  height: 90px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -225,10 +242,18 @@ textarea {
   display: none;
   align-items: center;
   justify-content: center;
-  h2{
+  filter: drop-shadow(0 10px 0.4rem rgba(138, 138, 138, 0.439));
+  background: #f5bd5c2c;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+  border: 1px solid rgba(216, 192, 30, 0.26);
+  h2 {
     position: fixed;
+    color: #000000;
     width: 100%;
-    height: 100%;
+    height: 140%;
   }
 }
 
