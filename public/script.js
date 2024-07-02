@@ -9,9 +9,17 @@ const clearResult = document.getElementById("clear-button-result");
 const popup = document.querySelector("#popup");
 const popupText = document.querySelector("#popup h2");
 const copyResult = document.getElementById("copy-button");
+const lengthToGenerate = document.getElementById("summarylength");
 
 summarizeLength.oninput = (e) => {
-  summValue.innerHTML = e.target.value;
+  let range = e.target.value;
+  if (range < 10) {
+    summValue.innerHTML = "S";
+  } else if (range < 15 && range >= 10) {
+    summValue.innerHTML = "M";
+  } else {
+    summValue.innerHTML = "L";
+  }
 };
 
 function showPopup() {
@@ -74,12 +82,14 @@ function submitData(e) {
   }
 
   const text_to_summarize = textArea.value;
+  const range = lengthToGenerate.value;
 
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
     text_to_summarize: text_to_summarize,
+    range: range,
   });
 
   var requestOptions = {
