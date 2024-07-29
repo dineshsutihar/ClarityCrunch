@@ -1,0 +1,31 @@
+# This is an example webapp.io configuration for NodeJS
+FROM vm/ubuntu:18.04
+# To note: Layerfiles create VMs, *not* containers!
+
+# Install Node.js
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get update && apt-get install -y nodejs && \
+    rm -f /etc/apt/sources.list.d/nodesource.list
+
+# Install http-server globally
+RUN npm install -g http-server
+
+# Copy application code
+COPY . .
+
+# Define secret environment variables
+SECRET ENV ACCESS_TOKEN
+SECRET ENV PORT
+
+# Print the secret token and port for debugging (not recommended for production)
+RUN echo "secret is: $ACCESS_TOKEN"
+RUN echo "port is: $PORT"
+
+# Install npm dependencies
+RUN npm install
+
+# Start the server in the background
+RUN BACKGROUND node index.js
+
+# Expose the port for the web server
+EXPOSE WEBSITE http://localhost:3000
