@@ -32,13 +32,13 @@ jobs:
         run: "npm install"
 
       - name: Build step
-        run: "npm build"
+        run: "npm start"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
           project: "dineshkumar-claritycrun-82"
-          entrypoint: "4000"
+          entrypoint: ""
           root: "./"
           
           
