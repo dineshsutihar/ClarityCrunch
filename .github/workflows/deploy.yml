@@ -35,7 +35,7 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: "dineshkumar-claritycrun-82"
-          entrypoint: "3000"
+          entrypoint: "app.js"
           root: "./"
           
           
