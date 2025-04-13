@@ -3,7 +3,7 @@ const app = express();
 require("dotenv").config();
 const summarizeText = require("./summarize.js");
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 // Parses JSON bodies (as sent by API clients)
 app.use(express.json());
 
